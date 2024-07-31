@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  servlet:
+    contextPath: /api
+
+spring:
+  profiles:
+    active=: ${ACTIVE_PROFILE:local}
+  redis:
+    host: localhost
+    port: 6379
+  application:
+    name: payment-transactions
+
+aws:
+  access_key: ${AWS_ACCESS_KEY:my_access_key}
+  secret_key: ${AWS_SECRET_KEY:my_secret_key}
+  region: us-east-1
+  dynamodb:
+    table: ${AWS_DYNAMODB_TABLE:account-balance}
+
